@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="card">
+          <div class="header header-primary text-center">
+            <h4>Digite seus dados</h4>
+          </div>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="content">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">email</i>
+                </span>
+                <div class="form-group">
+                  <%= f.input :email, required: true, label: 'Email' %>
+                  <span class="material-input"></span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">lock_outline</i>
+                </span>
+                <div class="form-group">
+                  <%= f.input :password, required: true, label: 'Senha' %>
+                  <span class="material-input"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.button :submit, "Entrar", data: { disable_with: 'Entrando ...' } %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

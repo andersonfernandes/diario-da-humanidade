@@ -19,10 +19,26 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Anotações nos modelos
+gem 'annotate'
+
+# Bootstrap Material Design Kit
+gem 'material_kit', '~> 1.0', '>= 1.0.0.2'
+
+# Autenticação
+gem 'devise'
+
+# Construtor de formulários
+gem 'simple_form'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-rescue'
+end
+
+group :production do
+  gem 'pg'
 end
 

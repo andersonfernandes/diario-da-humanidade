@@ -1,14 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DiarioDaHumanidade</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <title>Diário da Humanidade</title>
 
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/icon?family=Material+Icons' %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:300,400,500,700' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/menu' %>
+    </header>
+
+    <main>
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+    </main>
+  </body>
 </html>
