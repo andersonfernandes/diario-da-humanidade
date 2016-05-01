@@ -1,20 +1,24 @@
-<div class="col-md-6 col-md-offset-3">
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-<%= flash_for type %>">
-      <div class="container-fluid">
-        <div class="alert-icon">
-          <i class="material-icons">info_outline</i>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-<%= flash_for type %>">
+          <div class="container-fluid">
+            <div class="alert-icon">
+              <i class="material-icons">info_outline</i>
+            </div>
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true"><i class="material-icons">clear</i></span>
+            </button>
+
+
+            <p class="text-center">
+              <%= msg %>
+            </p>
+          </div>
         </div>
-
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true"><i class="material-icons">clear</i></span>
-        </button>
-
-
-        <p class="text-center">
-          <%= msg %>
-        </p>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>

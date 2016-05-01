@@ -6,33 +6,16 @@
             <h4>Digite seus dados</h4>
           </div>
 
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="content">
-              <div class="input-group">
-                <span class="input-group-addon">
-                  <i class="material-icons">email</i>
-                </span>
-                <div class="form-group">
-                  <%= f.input :email, required: true, label: 'Email' %>
-                  <span class="material-input"></span>
-                </div>
-              </div>
+          <div class="content">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.input :email, required: true, label: 'Email', autofocus: true %>
+              <%= f.input :password, required: true, label: 'Senha' %>
 
-              <div class="input-group">
-                <span class="input-group-addon">
-                  <i class="material-icons">lock_outline</i>
-                </span>
-                <div class="form-group">
-                  <%= f.input :password, required: true, label: 'Senha' %>
-                  <span class="material-input"></span>
-                </div>
+              <div class="text-center">
+                <%= f.button :submit, "Entrar", class: 'btn-raised', data: { disable_with: 'Entrando ...' } %>
               </div>
-            </div>
-
-            <div class="text-center">
-              <%= f.button :submit, "Entrar", data: { disable_with: 'Entrando ...' } %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
     </div>
   </div>
