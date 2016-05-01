@@ -31,6 +31,9 @@ gem 'devise'
 # Construtor de formulários
 gem 'simple_form'
 
+# Necessario para rodar no windows
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
