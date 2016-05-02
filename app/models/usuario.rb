@@ -20,7 +20,9 @@
 
 class Usuario < ActiveRecord::Base
   devise :database_authenticatable, :registerable
-  has_many :posts
-  has_many :comentarios
+
+  has_many :posts, class_name: 'Post', foreign_key: 'usuario_id'
+  has_many :comentarios, class_name: 'Post', foreign_key: 'usuario_id'
+
   validates_presence_of :name, :email, :password, :password_confirmation
 end

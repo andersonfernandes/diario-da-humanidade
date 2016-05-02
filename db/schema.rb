@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501185250) do
+ActiveRecord::Schema.define(version: 20160502020107) do
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string  "texto",                      null: false
+    t.boolean "anonimo",    default: false
+    t.integer "usuario_id"
+    t.integer "post_id"
+  end
+
+  add_index "comentarios", ["post_id"], name: "index_comentarios_on_post_id"
+  add_index "comentarios", ["usuario_id"], name: "index_comentarios_on_usuario_id"
+
+  create_table "posts", force: :cascade do |t|
+    t.string  "titulo",                     null: false
+    t.text    "texto",                      null: false
+    t.boolean "anonimo",    default: false
+    t.integer "usuario_id"
+  end
+
+  add_index "posts", ["usuario_id"], name: "index_posts_on_usuario_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
