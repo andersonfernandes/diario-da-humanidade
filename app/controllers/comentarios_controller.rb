@@ -43,7 +43,7 @@ class ComentariosController < ApplicationController
       flash[:notice] = 'Comentário removido!'
       redirect_to :back
     else
-      flash[alert:] = 'Não foi possível remover o comentário'
+      flash[:alert] = 'Não foi possível remover o comentário'
       redirect_to :back
     end
   end

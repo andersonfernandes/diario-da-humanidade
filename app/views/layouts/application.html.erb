@@ -23,6 +23,12 @@
     <main>
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
+
+      <div class="fixed-fab">
+        <%= link_to new_post_path, class: 'btn btn-primary btn-raised btn-fab btn-round', title: 'Novo Post' do %>
+          <i class="material-icons">add</i>
+        <% end if usuario_signed_in? %>
+      </div>
     </main>
   </body>
 </html>

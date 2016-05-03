@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#index'
+  root to: 'home#index'
 
   devise_for :usuarios
   resources :posts
+  resources :comentarios
+  get 'perfil' => 'usuarios#perfil'
 end

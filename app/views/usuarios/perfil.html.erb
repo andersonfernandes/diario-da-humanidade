@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="content">
+          	<h3><%= @usuario.name %></h3>
+
+          	<div>
+          		<h3 class="text-center">Postagens</h3>
+
+          		<table class="table table-striped">
+          			<thead>
+          				<tr>
+		      				<th>Título</th>
+		      				<th>Data</th>
+		      			</tr>
+          			</thead>
+
+          			<tbody>
+          				<% @usuario.posts.each do |post| %>
+          					<tr>
+		          				<td><%= post.titulo %></td>
+		          				<td><%= l post.created_at, format: :long %></td>
+		          			</tr>
+          				<% end %>
+          			</tbody>
+          		</table>
+          	</div>
+          </div>
+      </div>
+     </div>
+  </div>
+</div>
