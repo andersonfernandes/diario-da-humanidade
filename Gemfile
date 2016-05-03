@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,14 +32,13 @@ gem 'simple_form'
 # Necessario para rodar no windows
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+# Database
+gem 'pg'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-rescue'
-end
-
-group :production do
-  gem 'pg'
 end
 
