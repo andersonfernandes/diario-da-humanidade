@@ -11,6 +11,6 @@
  * file per style scope.
  *
  *= require material_kit
-*= require_tree .
+ *= require_tree .
  *= require_self
  */

@@ -1,0 +1,16 @@
+<%= simple_form_for @post do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :titulo, required: true %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :texto, required: true, input_html: { rows: 8 } %>
+    </div>
+  </div>
+
+  <%= f.button :submit, "Criar", class: 'btn-raised btn-success pull-right',
+                data: { disable_with: 'Criando...' } %>
+<% end %>
