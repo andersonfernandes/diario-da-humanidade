@@ -1,20 +1,21 @@
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-
-development:
-  <<: *default
-  database: db/development.sqlite3
-test:
-  <<: *default
-  database: db/test.sqlite3
-
-production:
   adapter: postgresql
   encoding: unicode
   pool: 5
   host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: diario-da-humanidade_development
+
+test:
+  <<: *default
+  database: diario-da-humanidade_test
+
+production:
+  <<: *default
   database: diario-da-humanidade_production
   username: diario-da-humanidade
   password: <%= ENV['DIARIO-DA-HUMANIDADE_DATABASE_PASSWORD'] %>
