@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require material_kit
+//= require summernote.min
 //= require turbolinks
 //= require_tree .

@@ -20,14 +20,14 @@
 			<tbody>
 				<% @posts.each do |post| %>
 					<tr>
-	  				<td><%= post.titulo %></td>
+	  				<td><%= link_to post.titulo, post_path(post) %></td>
 	  				<td><%= l post.created_at, format: :long %></td>
-	  				<td><%= post.usuario.name %></td>
+	  				<td><%= autor_do_post post %></td>
 	  			</tr>
 				<% end %>
 			</tbody>
 		</table>
-	</div>		
+	</div>
   </div>
 </div>
 

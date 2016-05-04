@@ -18,10 +18,10 @@ class PostsController < ApplicationController
     @post = Post.new post_params
 
     if @post.save
-      flash[:notice] = 'Postagem criada com sucesso!'
-      redirect_to :back
+      flash[:notice] = 'Post criado com sucesso!'
+      redirect_to post_path(@post)
     else
-      flash.now[:alert] = 'A postagem não pôde ser criada'
+      flash.now[:alert] = 'O Post não pôde ser criado'
       render :new
     end
   end
@@ -32,20 +32,20 @@ class PostsController < ApplicationController
 
   def update
     if @post.update
-      flash[:notice] = 'Postagem atualizada com sucesso!'
-      redirect_to :back
+      flash[:notice] = 'Post atualizado com sucesso!'
+      redirect_to post_path(@post)
     else
-      flash.now[:alert] = 'A postagem não pôde ser atualizada'
+      flash.now[:alert] = 'A Post não pôde ser atualizado'
       render :edit
     end
   end
 
   def destroy
     if @post.destroy
-      flash[:notice] = 'Postagem removida com sucesso!'
+      flash[:notice] = 'Post removido com sucesso!'
       redirect_to :back
     else
-      flash[:alert] = 'A postagem não pôde ser removida'
+      flash[:alert] = 'O Post não pôde ser removido'
       redirect_to :back
     end
   end
