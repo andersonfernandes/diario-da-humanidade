@@ -1,17 +1,6 @@
 class ComentariosController < ApplicationController
-  before_action :set_comentario, only: [:show, :edit, :update, :destroy]
+  before_action :set_comentario, only: [:update, :destroy]
   before_action :authenticate_usuario!
-
-  def index
-    @comentarios = Comentario.all.where usuario: current_user
-  end
-
-  def show
-  end
-
-  def new
-    @comentario = Comentario.new
-  end
 
   def create
     @comentario = Comentario.new comentario_params
@@ -24,10 +13,6 @@ class ComentariosController < ApplicationController
       render :new
     end
   end
-
-  def edit
-  end
-
 
   def update
     if @comentario.update comentario_params
@@ -54,8 +39,8 @@ class ComentariosController < ApplicationController
     @comentario = Comentario.find_by id: params[:id]
   end
   
-  def post_params
-    params.require(:comentario).permit(:id, :texto, :anonimo).merge(usuario_id: current_usuario.id)
+  def comentario_params
+    params.require(:comentario).permit(:id, :texto, :anonimo, :post_id).merge(usuario_id: current_usuario.id)
   end
 
 end

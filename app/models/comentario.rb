@@ -16,4 +16,8 @@ class Comentario < ActiveRecord::Base
 	belongs_to :post, class_name: 'Post', foreign_key: 'post_id'
 
   validates_presence_of :texto, :usuario, :post
+
+  def nome_usuario
+  	self.usuario.name
+  end
 end

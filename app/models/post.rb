@@ -13,7 +13,7 @@
 
 class Post < ActiveRecord::Base
 	belongs_to :usuario, class_name: 'Usuario', foreign_key: 'usuario_id'
-	has_many :comentarios, class_name: 'Usuario', foreign_key: 'post_id'
+	has_many :comentarios, class_name: 'Comentario', foreign_key: 'post_id', dependent: :destroy
 
   validates_presence_of :titulo, :texto, :usuario
 

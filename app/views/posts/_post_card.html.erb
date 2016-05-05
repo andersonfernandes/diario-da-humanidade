@@ -1,5 +1,5 @@
 <div class="card post-card post">
-  <%= link_to post_path(post), class: 'btn' do %>
+  <%= link_to post_path(post), class: 'btn', data: { no_turbolink: true } do %>
     <div class="content">
       <h4 class="titulo"><%= post.titulo %></h4>
       <small class="autor">Por <%= post.nome_do_usuario %> em <%= l post.created_at, format: :basic %></small>

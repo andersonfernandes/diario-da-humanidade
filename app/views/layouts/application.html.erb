@@ -32,5 +32,9 @@
         <% end if usuario_signed_in? && request.fullpath != new_post_path %>
       </div>
     </main>
+
+    <footer>
+      <p class="text-center">Diário da Humanidade - <%= Date.today.year %></p>
+    </footer>
   </body>
 </html>

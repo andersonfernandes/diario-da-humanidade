@@ -7,8 +7,30 @@
           <small class="autor">Por <%= autor(@post) %></small>
         </div>
 
-        <div class="content">
+        <div class="content col-md-8 col-md-offset-2">
           <%= @post.texto.html_safe %>
+        </div>
+      </div>
+
+      <div class="card comentarios">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h4>Comentários:</h4>
+            
+            <div class="novo">
+              <%= render partial: 'comentarios/form',
+                         locals: { post_id: @post.id } %>
+            </div>
+
+            <div class="lista-comentarios">
+              <% @comentarios.each do |comentario| %>
+                <div class="comentario">
+                  <span><%= autor comentario %>: </span>
+                  <span><%= comentario.texto %></span>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

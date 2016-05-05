@@ -1,0 +1,17 @@
+<div class="row">
+		<%= simple_form_for build_comentario do |f| %>
+			<%= f.input :post_id, as: :hidden, input_html: { value: post_id } %>
+
+			<div class="col-md-12">
+				<%= f.input :texto, label: false, placeholder: 'Comentar' %>
+			</div>
+
+			<div class="row">
+				<%= f.submit 'Comentar', class: 'btn btn-raised btn-success pull-right' %>	
+				
+				<div class="col-md-4 text-right pull-right">
+					<%= f.input :anonimo, label: 'Anônimo?' %>
+				</div>	
+			</div>
+		<% end %>
+</div>

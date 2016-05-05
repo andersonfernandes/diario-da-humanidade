@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @comentarios = @post.comentarios.order(:created_at).reverse
   end
 
   def new
