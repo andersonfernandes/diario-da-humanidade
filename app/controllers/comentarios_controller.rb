@@ -1,4 +1,5 @@
 class ComentariosController < ApplicationController
+  before_action :set_comentario, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!
 
   def index
@@ -29,7 +30,7 @@ class ComentariosController < ApplicationController
 
 
   def update
-    if @comentario.save
+    if @comentario.update comentario_params
       flash[:notice] = 'Comentario modificado!'
       redirect_to :back
     else
