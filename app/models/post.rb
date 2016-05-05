@@ -16,4 +16,12 @@ class Post < ActiveRecord::Base
 	has_many :comentarios, class_name: 'Usuario', foreign_key: 'post_id'
 
   validates_presence_of :titulo, :texto, :usuario
+
+  def nome_do_usuario
+  	if self.anonimo
+      'Anônimo'
+    else
+      self.usuario.name
+    end
+  end
 end

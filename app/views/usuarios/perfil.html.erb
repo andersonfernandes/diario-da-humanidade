@@ -23,7 +23,7 @@
 		          				<td><%= link_to post.titulo, post_path(post) %></td>
 		          				<td><%= l post.created_at, format: :long %></td>
                       <td>
-                        <%= link_to 'Editar', edit_post_path(post) %>
+                        <%= link_to 'Editar', edit_post_path(post), data: { no_turbolink: true } %>
                         <span> | </span>
                         <%= link_to 'Remover', post_path(post), method: :delete, data: { confirm: 'Tem certeza?' } %>
                       </td>

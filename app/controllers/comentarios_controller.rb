@@ -29,7 +29,7 @@ class ComentariosController < ApplicationController
 
 
   def update
-    if @comentario.update
+    if @comentario.save
       flash[:notice] = 'Comentario modificado!'
       redirect_to :back
     else

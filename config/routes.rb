@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :comentarios
+  
   get 'perfil' => 'usuarios#perfil'
+
+  resources :usuarios, only: [:show]
 end

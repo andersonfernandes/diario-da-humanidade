@@ -27,7 +27,7 @@
       <%= yield %>
 
       <div class="fixed-fab">
-        <%= link_to new_post_path, class: 'btn btn-primary btn-raised btn-fab btn-round', title: 'Novo Post' do %>
+        <%= link_to new_post_path, class: 'btn btn-primary btn-raised btn-fab btn-round', title: 'Novo Post', data: { no_turbolink: true } do %>
           <i class="material-icons">add</i>
         <% end if usuario_signed_in? && request.fullpath != new_post_path %>
       </div>

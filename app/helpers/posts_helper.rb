@@ -1,9 +1,9 @@
 module PostsHelper
-  def autor_do_post post
+  def autor post
     if post.anonimo
-      'Anônimo'
+    	'Anônimo'
     else
-      post.usuario.name
+    	link_to post.usuario.name, usuario_path(post.usuario), target: '_blank'
     end
   end
 end
