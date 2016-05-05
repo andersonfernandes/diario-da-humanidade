@@ -12,6 +12,16 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= form_tag search_posts_path, method: :get do %>
+              <span title="Buscar Post">
+                <i id="search-link" class="material-icons btn btn-link">search</i>
+                <%= text_field_tag :search, @search, autofocus: true, id: 'search-input', placeholder: 'Busque pelo título do post' %>
+                <%= submit_tag 'Buscar', id: 'search-button' %>
+              </span>
+            <% end %>
+          </li>
+
           <% if usuario_signed_in? %>
             <li><%= link_to current_usuario.name, perfil_path, class: 'btn' %></li>
             <li><%= link_to 'Sair', destroy_usuario_session_path, method: :delete, class: 'btn' %></li>

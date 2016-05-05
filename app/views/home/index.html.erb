@@ -2,32 +2,19 @@
   <h1>Bem vindo ao Diário da Humanidade!</h1>
   <h3>Aqui você pode compartilhar suas histórias, situações e o que mais desejar.</h3>
 
-  <div class="divider"></div>
+  <div class="ultimos-posts card">
+		<div class="content text-center">
+			<h3>Últimas Postagens</h3>
 
-  <div class="card">
-	<div class="content">
-		<h3 class="text-center">Últimas Postagens</h3>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th class="text-center">Título</th>
-					<th class="text-center">Data</th>
-					<th class="text-center">Autor</th>
-				</tr>
-			</thead>
-
-			<tbody>
+				<div class="row">
 				<% @posts.each do |post| %>
-					<tr>
-	  				<td><%= link_to post.titulo, post_path(post) %></td>
-	  				<td><%= l post.created_at, format: :long %></td>
-	  				<td><%= autor_do_post post %></td>
-	  			</tr>
+					<div class="col-md-4">
+						<%= render partial: 'posts/post_card',
+										 locals: { post: post } %>
+					</div>
 				<% end %>
-			</tbody>
-		</table>
-	</div>
+			</div>
+		</div>
   </div>
 </div>
 

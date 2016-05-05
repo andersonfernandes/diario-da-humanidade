@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_usuario!
+  before_action :authenticate_usuario!, except: [:search, :show]
 
   def index
     @posts = Post.all.where usuario: current_user
@@ -48,6 +48,11 @@ class PostsController < ApplicationController
       flash[:alert] = 'O Post não pôde ser removido'
       redirect_to :back
     end
+  end
+
+  def search
+    @search = params[:search]
+    @result = Post.where "lower(titulo) LIKE '%#{@search.downcase}%'"
   end
 
   private
