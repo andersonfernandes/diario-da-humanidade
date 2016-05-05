@@ -4,9 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  texto      :string           not null
-#  anonimo    :boolean          default("f")
+#  anonimo    :boolean          default("false")
 #  usuario_id :integer
 #  post_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 class Comentario < ActiveRecord::Base

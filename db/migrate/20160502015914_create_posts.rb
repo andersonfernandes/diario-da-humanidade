@@ -5,6 +5,8 @@ class CreatePosts < ActiveRecord::Migration
       t.text :texto, null: false
       t.boolean :anonimo, default: false
       t.references :usuario, index: true, foreign_key: true
+
+      t.timestamps null: false
     end
   end
 end

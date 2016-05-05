@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1>Bem vindo ao Diário da Humanidade!</h1>
+  <h3>Aqui você pode compartilhar suas histórias, situações e o que mais desejar.</h3>
+
+  <div class="ultimos-posts card">
+		<div class="content text-center">
+			<h3>Últimas Postagens</h3>
+
+				<div class="row">
+				<% @posts.each do |post| %>
+					<div class="col-md-4">
+						<%= render partial: 'posts/post_card',
+										 locals: { post: post } %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+  </div>
+</div>
+

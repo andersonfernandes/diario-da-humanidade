@@ -5,6 +5,8 @@ class CreateComentarios < ActiveRecord::Migration
       t.boolean :anonimo, default: false
       t.references :usuario, index: true, foreign_key: true
       t.references :post, index: true, foreign_key: true
+
+      t.timestamps null: false
     end
   end
 end

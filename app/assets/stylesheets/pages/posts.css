@@ -1,0 +1,17 @@
+.post-card {
+  margin: 5px 5px 5px 0px;
+  background-color: rgba(158, 158, 158, .4);
+}
+
+.post-card:hover {
+  background-color: rgba(158, 158, 158, .6);
+}
+
+.post .titulo {
+  margin-bottom: 0;
+}
+
+.post .autor {
+  margin-top: 0;
+}
+

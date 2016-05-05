@@ -1,0 +1,21 @@
+#search-link {
+  cursor: pointer;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+#search-link:hover {
+  text-decoration: none;
+}
+
+#search-button {
+  display: none;
+}
+
+#search-input {
+  padding: 4px;
+  color: #000;
+  display: none;
+  border-color: rgba(255, 255, 255, .1);
+  border-radius: 2px;
+}

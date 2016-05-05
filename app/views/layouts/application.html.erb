@@ -13,6 +13,8 @@
     <%= stylesheet_link_tag '//fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:300,400,500,700' %>
 
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
   <body>
@@ -23,6 +25,12 @@
     <main>
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
+
+      <div class="fixed-fab">
+        <%= link_to new_post_path, class: 'btn btn-primary btn-raised btn-fab btn-round', title: 'Novo Post' do %>
+          <i class="material-icons">add</i>
+        <% end if usuario_signed_in? && request.fullpath != new_post_path %>
+      </div>
     </main>
   </body>
 </html>

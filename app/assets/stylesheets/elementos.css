@@ -1,5 +1,5 @@
 .fixed-fab {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
 }

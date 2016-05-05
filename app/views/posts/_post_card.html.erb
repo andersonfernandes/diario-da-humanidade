@@ -1,0 +1,8 @@
+<div class="card post-card post">
+  <%= link_to post_path(post), class: 'btn' do %>
+    <div class="content">
+      <h4 class="titulo"><%= post.titulo %></h4>
+      <small class="autor">Por <%= autor_do_post post %> em <%= l post.created_at, format: :basic %></small>
+    </div>
+  <% end %>
+</div>

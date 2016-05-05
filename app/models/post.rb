@@ -5,8 +5,10 @@
 #  id         :integer          not null, primary key
 #  titulo     :string           not null
 #  texto      :text             not null
-#  anonimo    :boolean          default("f")
+#  anonimo    :boolean          default("false")
 #  usuario_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 class Post < ActiveRecord::Base

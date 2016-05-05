@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card post">
+        <div class="text-center">
+          <h3 class="titulo"><%= @post.titulo %></h3>
+          <small class="autor">Por <%= autor_do_post @post %></small>
+        </div>
+
+        <div class="content">
+          <%= @post.texto.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
