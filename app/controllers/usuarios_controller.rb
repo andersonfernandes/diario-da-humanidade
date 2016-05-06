@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  before_action :authenticate_usuario!
+  before_action :authenticate_usuario!, except: [:show]
 
 	def show
 		@usuario = Usuario.find_by id: params[:id]
