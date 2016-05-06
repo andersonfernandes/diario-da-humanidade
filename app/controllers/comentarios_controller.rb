@@ -6,7 +6,7 @@ class ComentariosController < ApplicationController
     @comentario = Comentario.new comentario_params
 
     if @comentario.save
-      flash[:notice] = 'Comentario adicionado!'
+      flash.now[:notice] = 'Comentario adicionado!'
       render :create
     else
       flash.now[:alert] = 'Não foi possível adicionar o comentário'
