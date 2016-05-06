@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :usuarios
 
-  resources :posts, except: [:index] do
+  resources :posts do
     collection do
       get 'search' => 'posts#search'
     end
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :comentarios, only: [:create, :update, :destroy]
 
-  get 'perfil' => 'usuarios#perfil'
-
   resources :usuarios, only: [:show]
+
+  get 'perfil' => 'usuarios#perfil'
 end
