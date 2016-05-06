@@ -1,0 +1,15 @@
+var texto = "<%= raw @comentario.texto %>";
+
+if(<%= @comentario.anonimo %>) {
+  autor = "<a href='javascript:void(0)' target='_blank'>Anônimo</a>";
+} else {
+  autor = "<a href='<%= usuario_path(@comentario.usuario) %>' target='_blank'><%= raw @comentario.usuario.name %></a>";
+}
+
+var comentario_html = "<div class='comentario'>" +
+                        "<div>" +autor +"</div>" +
+                        "<span>" +texto +"</span>" +
+                      "</div>";
+
+$('#input-comentario').val('');
+$('.lista-comentarios').first().prepend(comentario_html);

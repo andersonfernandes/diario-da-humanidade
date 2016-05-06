@@ -7,10 +7,10 @@ class ComentariosController < ApplicationController
 
     if @comentario.save
       flash[:notice] = 'Comentario adicionado!'
-      redirect_to :back
+      render :create
     else
       flash.now[:alert] = 'Não foi possível adicionar o comentário'
-      render :new
+      render :nothig
     end
   end
 
@@ -38,7 +38,7 @@ class ComentariosController < ApplicationController
   def set_comentario
     @comentario = Comentario.find_by id: params[:id]
   end
-  
+
   def comentario_params
     params.require(:comentario).permit(:id, :texto, :anonimo, :post_id).merge(usuario_id: current_usuario.id)
   end

@@ -2,10 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_usuario!, except: [:search, :show]
 
-  def index
-    @posts = Post.all.where usuario: current_user
-  end
-
   def show
     @comentarios = @post.comentarios.order(:created_at).reverse
   end
@@ -27,7 +23,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    if @post.usuario != current_usuario
+      flash[:alert] = 'Você não tem permissão para essa ação!'
+      redirect_to perfil_path
+    end
   end
 
   def update

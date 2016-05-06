@@ -5,32 +5,38 @@
           <div class="content">
           	<h3><%= @usuario.name %></h3>
 
-          	<div>
-          		<h3 class="text-center">Postagens</h3>
+          	<div class="text-center">
+          		<h3>Postagens</h3>
 
-          		<table class="table table-striped">
-          			<thead>
-          				<tr>
-		      				<th class="text-center">Título</th>
-		      				<th class="text-center">Data</th>
-                  <th></th>
-		      			</tr>
-          			</thead>
+          		<% unless @posts.empty? %>
+                <table class="text-center table table-striped">
+                  <thead>
+                    <tr>
+                    <th class="text-center">Título</th>
+                    <th class="text-center">Data</th>
+                    <th></th>
+                  </tr>
+                  </thead>
 
-          			<tbody>
-          				<% @posts.each do |post| %>
-          					<tr>
-		          				<td><%= link_to post.titulo, post_path(post) %></td>
-		          				<td><%= l post.created_at, format: :long %></td>
-                      <td>
-                        <%= link_to 'Editar', edit_post_path(post), data: { no_turbolink: true } %>
-                        <span> | </span>
-                        <%= link_to 'Remover', post_path(post), method: :delete, data: { confirm: 'Tem certeza?' } %>
-                      </td>
-		          			</tr>
-          				<% end %>
-          			</tbody>
-          		</table>
+                  <tbody>
+                    <% @posts.each do |post| %>
+                      <tr>
+                        <td><%= link_to post.titulo, post_path(post) %></td>
+                        <td><%= l post.created_at, format: :long %></td>
+                        <td>
+                          <%= link_to 'Editar', edit_post_path(post), data: { no_turbolink: true } %>
+                          <span> | </span>
+                          <%= link_to 'Remover', post_path(post), method: :delete, data: { confirm: 'Tem certeza?' } %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              <% else %>
+                <strong class="text-center">
+                  Sem Postagens!
+                </strong>
+              <% end %>
           	</div>
           </div>
       </div>

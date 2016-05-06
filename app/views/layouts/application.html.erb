@@ -17,7 +17,7 @@
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
-  <body>
+  <body class="wrap">
     <header>
       <%= render 'layouts/menu' %>
     </header>
@@ -33,7 +33,7 @@
       </div>
     </main>
 
-    <footer>
+    <footer class="footer">
       <p class="text-center">Diário da Humanidade - <%= Date.today.year %></p>
     </footer>
   </body>

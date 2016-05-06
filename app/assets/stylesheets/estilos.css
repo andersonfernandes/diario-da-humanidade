@@ -1,12 +1,10 @@
-body {
-	display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
 }
 
-main {
-	flex: 1;
-}
 
 .fixed-fab {
   position: fixed;

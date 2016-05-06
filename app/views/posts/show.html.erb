@@ -16,16 +16,18 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <h4>Comentários:</h4>
-            
+
             <div class="novo">
               <%= render partial: 'comentarios/form',
                          locals: { post_id: @post.id } %>
             </div>
 
+            <hr>
+
             <div class="lista-comentarios">
               <% @comentarios.each do |comentario| %>
                 <div class="comentario">
-                  <span><%= autor comentario %>: </span>
+                  <div><%= autor comentario %>: </div>
                   <span><%= comentario.texto %></span>
                 </div>
               <% end %>

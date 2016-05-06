@@ -14,6 +14,7 @@ $(document).on 'page:change', ->
       [
         'font'
         [
+          'fontname'
           'strikethrough'
           'superscript'
           'subscript'

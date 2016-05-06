@@ -7,12 +7,18 @@
 			<h3>Últimas Postagens</h3>
 
 			<div class="row">
-				<% @posts.each do |post| %>
-					<div class="col-md-4">
-						<%= render partial: 'posts/post_card',
-										 locals: { post: post } %>
-					</div>
-				<% end %>
+        <% unless @posts.empty? %>
+  				<% @posts.each do |post| %>
+  					<div class="col-md-4">
+  						<%= render partial: 'posts/post_card',
+  										 locals: { post: post } %>
+  					</div>
+  				<% end %>
+        <% else %>
+          <strong class="text-center">
+            Sem Postagens Recentes!
+          </strong>
+        <% end %>
 			</div>
 		</div>
   </div>

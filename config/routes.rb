@@ -3,14 +3,14 @@ Rails.application.routes.draw do
 
   devise_for :usuarios
 
-  resources :posts do
+  resources :posts, except: [:index] do
     collection do
       get 'search' => 'posts#search'
     end
   end
 
-  resources :comentarios
-  
+  resources :comentarios, only: [:create, :update, :destroy]
+
   get 'perfil' => 'usuarios#perfil'
 
   resources :usuarios, only: [:show]
